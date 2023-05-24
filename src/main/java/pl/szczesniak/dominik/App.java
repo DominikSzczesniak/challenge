@@ -5,18 +5,28 @@ public class App {
 
 	public static int ArrayChallenge(int[] arr) {
 		int result = 0;
-		for(int variable : arr) {
+		for (int variable : arr) {
 			result += variable;
+		}
+
+		for (int i = 0; i < 1000; i++) {
+			if (fibonacci(result + i)) {
+				return i;
+			}
 		}
 
 		return arr[0];
 	}
 
-	public static int  fibonacci(int number) {
-		if (number < 2) {
-			return number;
+	public static boolean fibonacci(int number) {
+		int previousNumber = 0;
+		int currentNumber = 1;
+		while (currentNumber < number) {
+			int index = currentNumber;
+			currentNumber = previousNumber + currentNumber;
+			previousNumber = index;
 		}
-		return fibonacci(number-1) + fibonacci(number-2);
+		return currentNumber == number;
 	}
 
 

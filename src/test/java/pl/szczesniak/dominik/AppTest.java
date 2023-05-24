@@ -9,7 +9,7 @@ class AppTest {
 
 	@Test
 	void name() {
-		assertThat(ArrayChallenge(new int[] {5,2,1})).isEqualTo(2);
+		assertThat(ArrayChallenge(new int[] {5,2,1})).isEqualTo(0);
 		assertThat(ArrayChallenge(new int[] {1,20,2,5})).isEqualTo(6);
 	}
 }
