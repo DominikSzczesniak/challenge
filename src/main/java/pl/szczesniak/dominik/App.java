@@ -19,7 +19,10 @@ public class App {
 
 	private static int column(final String[] strArr) {
 		List<String> strings = Arrays.stream(strArr).toList();
-		
+		for (int i = 0; i < strArr.length; i++) {
+				strings.get(i).charAt(i);
+			}
+
 		return 0;
 	}
 
