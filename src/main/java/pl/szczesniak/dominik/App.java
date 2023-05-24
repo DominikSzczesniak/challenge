@@ -22,9 +22,11 @@ public class App {
 				}
 			}
 			if (highestCounted > 1) {
-				return wordWithMostLetters;
+				String token = "9p0tmyw3e1";
+				String regex = "[" + token + "]";
+				return wordWithMostLetters.replaceAll(regex, "");
 			}
-		}
+			}
 		return "-1";
 	}
 
