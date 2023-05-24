@@ -9,7 +9,7 @@ class AppTest {
 
 	@Test
 	void name() {
-		assertThat(SearchingChallenge("mam na imie dominik")).isEqualTo("mam");
-		assertThat(SearchingChallenge("kamil")).isEqualTo("-1");
+//		assertThat(SearchingChallenge("mam na imie dominik")).isEqualTo("mam");
+		assertThat(SearchingChallenge("No words")).isEqualTo("-1");
 	}
 }

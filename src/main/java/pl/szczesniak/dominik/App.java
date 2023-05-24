@@ -1,24 +1,31 @@
 package pl.szczesniak.dominik;
 
-import java.awt.*;
-
 public class App {
 
 
 	public static String SearchingChallenge(String str) {
 		String[] list = str.split(" ");
+		int highestCounted = 0;
+		String wordWithMostLetters = "";
 		for (String word : list) {
-			int counter = 0;
+			int letterCounter = 0;
 			for (int i = 0; i < word.length(); i++) {
-				char c = word.charAt(0);
+				char c = word.charAt(i);
 				for (int k = 0; k < word.length(); k++) {
-					if (word.charAt(k) == c) {
-						counter++;
+					if (k != i && word.charAt(k) == c) {
+						letterCounter++;
 					}
 				}
+				if (letterCounter > 1 && letterCounter > highestCounted) {
+					highestCounted = letterCounter;
+					wordWithMostLetters = word;
+				}
+			}
+			if (highestCounted > 1) {
+				return wordWithMostLetters;
 			}
 		}
-		return str;
+		return "-1";
 	}
 
 
