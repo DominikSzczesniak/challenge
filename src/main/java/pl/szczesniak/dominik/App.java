@@ -1,32 +1,45 @@
 package pl.szczesniak.dominik;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class App {
 
 
-	public static int ArrayChallenge(int[] arr) {
-		int result = 0;
-		for (int variable : arr) {
-			result += variable;
-		}
+//	new String[] {"101",
+//				  "111",
+//				  "001"}
 
-		for (int i = 0; i < 1000; i++) {
-			if (fibonacci(result + i)) {
-				return i;
-			}
-		}
+	public static String MatrixChallenge(String[] strArr) {
+		int row = row(strArr);
+		int column = column(strArr);
 
-		return arr[0];
+		return String.valueOf(row);
 	}
 
-	public static boolean fibonacci(int number) {
-		int previousNumber = 0;
-		int currentNumber = 1;
-		while (currentNumber < number) {
-			int index = currentNumber;
-			currentNumber = previousNumber + currentNumber;
-			previousNumber = index;
+	private static int column(final String[] strArr) {
+		List<String> strings = Arrays.stream(strArr).toList();
+		
+		return 0;
+	}
+
+	private static int row(final String[] strArr) {
+		int finalCounter = 0;
+		int counter = 0;
+		List<String> strings = Arrays.stream(strArr).toList();
+		for (int i = 0; i < strArr.length; i++) {
+			counter = 0;
+			String s = strings.get(i);
+			for (int k = 0; k < s.length(); k++) {
+				if (s.charAt(k) == '1') {
+					counter++;
+				}
+				if (counter > finalCounter) {
+					finalCounter = counter;
+				}
+			}
 		}
-		return currentNumber == number;
+		return finalCounter;
 	}
 
 
