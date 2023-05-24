@@ -1,20 +1,28 @@
 package pl.szczesniak.dominik;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.awt.*;
 
 public class App {
 
-    public static int[] arrayDiff(int[] a, int[] b) {
-        List<Integer> listA = Arrays.stream(a).boxed().collect(Collectors.toList());
-        List<Integer> listB = Arrays.stream(b).boxed().collect(Collectors.toList());
-        listA.removeAll(listB);
-        return listA.stream().mapToInt(e -> e).toArray();
-    }
+
+	public static String SearchingChallenge(String str) {
+		String[] list = str.split(" ");
+		for (String word : list) {
+			int counter = 0;
+			for (int i = 0; i < word.length(); i++) {
+				char c = word.charAt(0);
+				for (int k = 0; k < word.length(); k++) {
+					if (word.charAt(k) == c) {
+						counter++;
+					}
+				}
+			}
+		}
+		return str;
+	}
 
 
-    public static void main (String[] args) {
-    }
+	public static void main(String[] args) {
+	}
 
 }
